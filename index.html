@@ -9,7 +9,6 @@
 
   <title>Welcome to My Homepage</title>
 
-  <!-- Week 2: Link the stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -40,9 +39,68 @@
     <section id="projects">
       <h2>Projects</h2>
       <p>
-        This section will showcase projects completed during this course and other
-        academic or personal projects as the website continues to grow.
+        Below are two sample projects with a name, description, and an image placeholder.
+        A table is also included to organize project information.
       </p>
+
+      <!-- Two sample projects with image placeholders -->
+      <article>
+        <h3>Sample Project 1: Network Security Dashboard</h3>
+        <p>
+          A sample dashboard concept that organizes security alerts and log summaries to help
+          identify suspicious activity quickly.
+        </p>
+        <img src="https://via.placeholder.com/300x180" alt="Placeholder image for Sample Project 1">
+      </article>
+
+      <article>
+        <h3>Sample Project 2: Patch Compliance Tracker</h3>
+        <p>
+          A sample tracker that displays patch status and system compliance across devices to
+          support maintenance planning and reporting.
+        </p>
+        <img src="https://via.placeholder.com/300x180" alt="Placeholder image for Sample Project 2">
+      </article>
+
+      <!-- Week 3: Table inside the #projects section -->
+      <table>
+        <caption>Project Summary Table</caption>
+
+        <!-- Week 3: colgroup + col to color 1st and 3rd columns -->
+        <colgroup>
+          <col class="col-1">
+          <col>
+          <col class="col-3">
+        </colgroup>
+
+        <thead>
+          <tr>
+            <th scope="col">Project Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Network Security Dashboard</td>
+            <td>Organizes alerts and log summaries for quicker analysis.</td>
+            <td>In Progress</td>
+          </tr>
+          <tr>
+            <td>Patch Compliance Tracker</td>
+            <td>Tracks patch status and compliance across multiple systems.</td>
+            <td>Planned</td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td colspan="3">More projects will be added as the course continues.</td>
+          </tr>
+        </tfoot>
+      </table>
+
     </section>
 
     <section id="contact">
