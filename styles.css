@@ -28,13 +28,13 @@ header h1 {
    Navigation Menu
    ========================= */
 nav ul {
-  list-style-type: none;      /* remove bullets */
+  list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
 nav li {
-  display: inline-block;      /* horizontal layout */
+  display: inline-block;
   margin: 0 10px;
 }
 
@@ -43,26 +43,85 @@ nav a {
   color: #ffffff;
   padding: 8px 12px;
   background-color: #555;
+
+  /* Week 3: transition for hover background color */
+  transition: background-color 0.3s ease;
 }
 
-/* Hover effect */
+/* Week 3: hover effect */
 nav a:hover {
   background-color: #777;
   color: #ffffff;
 }
 
 /* =========================
-   Main Content Sections
+   Main Content
    ========================= */
 main {
   padding: 20px;
 }
 
+/* Week 3: smooth transition + scale hover effect for each section */
 section {
   margin-bottom: 20px;
   padding: 15px;
   background-color: #ffffff;
   border: 1px solid #ccc;
+
+  transition: transform 0.3s ease;
+}
+
+section:hover {
+  transform: scale(1.02);
+}
+
+/* Basic article spacing inside Projects */
+article {
+  margin: 15px 0;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+img {
+  display: block;
+  margin-top: 10px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================
+   Table Styling (Week 3)
+   ========================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+}
+
+caption {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+/* Header background color requirement */
+thead th {
+  background-color: #e6e6e6;
+}
+
+/* Week 3: color first and third columns using colgroup */
+.col-1 {
+  background-color: #f9f1d6;
+}
+
+.col-3 {
+  background-color: #d8f1f9;
 }
 
 /* =========================
