@@ -43,23 +43,25 @@
         A table is also included to organize project information.
       </p>
 
-      <article>
-        <h3>Sample Project 1: IT Security Analytics Dashboard</h3>
-        <p>
-          A sample dashboard concept that summarizes security metrics such as attack volume,
-          response time, and security level for quick visibility.
-        </p>
-        <img src="analytics.png" alt="IT Security Analytics dashboard example image">
-      </article>
+      <div class="project-list">
+        <article class="project-card">
+          <h3>Sample Project 1: Network Security Dashboard</h3>
+          <p>
+            A sample dashboard concept that organizes security alerts and log summaries to help
+            identify suspicious activity quickly.
+          </p>
+          <img src="https://via.placeholder.com/300x180" alt="Placeholder image for Sample Project 1">
+        </article>
 
-      <article>
-        <h3>Sample Project 2: Compliance Dashboard</h3>
-        <p>
-          A sample compliance dashboard that summarizes compliance percentage, remediation plans,
-          and server status categories.
-        </p>
-        <img src="compliance.png" alt="Compliance dashboard example image">
-      </article>
+        <article class="project-card">
+          <h3>Sample Project 2: Patch Compliance Tracker</h3>
+          <p>
+            A sample tracker that displays patch status and system compliance across devices to
+            support maintenance planning and reporting.
+          </p>
+          <img src="https://via.placeholder.com/300x180" alt="Placeholder image for Sample Project 2">
+        </article>
+      </div>
 
       <table>
         <caption>Project Summary Table</caption>
@@ -80,13 +82,13 @@
 
         <tbody>
           <tr>
-            <td>IT Security Analytics Dashboard</td>
-            <td>Summarizes security metrics like attacks, response time, and security level.</td>
+            <td>Network Security Dashboard</td>
+            <td>Organizes alerts and log summaries for quicker analysis.</td>
             <td>In Progress</td>
           </tr>
           <tr>
-            <td>Compliance Dashboard</td>
-            <td>Tracks compliance totals, remediation plans, and server status categories.</td>
+            <td>Patch Compliance Tracker</td>
+            <td>Tracks patch status and compliance across multiple systems.</td>
             <td>Planned</td>
           </tr>
         </tbody>
@@ -102,17 +104,19 @@
 
     <section id="contact">
       <h2>Contact</h2>
+      <p>
+        Use the form below to send a message. (Name and Email are required.)
+      </p>
 
       <form class="contact-form" action="#" method="post">
-
         <div class="form-row">
-          <label for="senderName">Sender Name</label>
+          <label for="senderName">Your Name *</label>
           <input type="text" id="senderName" name="senderName" required>
         </div>
 
         <div class="form-row">
-          <label for="senderEmail">Email Address</label>
-          <input type="email" id="senderEmail" name="senderEmail" required>
+          <label for="emailAddress">Email Address *</label>
+          <input type="email" id="emailAddress" name="emailAddress" required>
         </div>
 
         <div class="form-row">
@@ -126,9 +130,8 @@
         </div>
 
         <div class="form-row">
-          <input type="submit" value="Submit">
+          <input type="submit" value="Send Message">
         </div>
-
       </form>
     </section>
 
