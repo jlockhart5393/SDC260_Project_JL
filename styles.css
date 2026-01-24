@@ -25,24 +25,18 @@ header h1 {
 }
 
 /* =========================
-   Navigation Menu
+   Navigation Menu (Flexbox)
    ========================= */
 nav ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 
-  /* Week 4: Flexbox navigation menu */
+  /* Week 4: Flexbox for nav */
   display: flex;
-  flex-direction: column;
-  gap: 10px;
   justify-content: center;
-  align-items: center;
-}
-
-/* Week 4: li no longer needs inline-block for flex layout */
-nav li {
-  margin: 0;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -50,32 +44,31 @@ nav a {
   color: #ffffff;
   padding: 8px 12px;
   background-color: #555;
+  border-radius: 4px;
 
-  /* Week 3: transition for hover background color */
+  /* Week 3 requirement kept: transition on hover background */
   transition: background-color 0.3s ease;
 }
 
-/* Week 3: hover effect */
 nav a:hover {
   background-color: #777;
   color: #ffffff;
 }
 
 /* =========================
-   Main Content
+   Main Content (Flexbox)
    ========================= */
 main {
   padding: 20px;
 
-  /* Week 4: Flexbox main content area */
+  /* Week 4: Flexbox for main content area */
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* Week 3: smooth transition + scale hover effect for each section */
+/* Week 3 + Week 4: section hover zoom with smooth transition */
 section {
-  margin-bottom: 0;
   padding: 15px;
   background-color: #ffffff;
   border: 1px solid #ccc;
@@ -87,11 +80,20 @@ section:hover {
   transform: scale(1.02);
 }
 
-/* Basic article spacing inside Projects */
-article {
-  margin: 15px 0;
-  padding: 10px;
+/* =========================
+   Projects Layout (Responsive Flexbox)
+   ========================= */
+.project-list {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.project-card {
+  flex: 1 1 280px;
   border: 1px solid #e0e0e0;
+  padding: 10px;
 }
 
 img {
@@ -122,12 +124,11 @@ th, td {
   text-align: left;
 }
 
-/* Header background color requirement */
 thead th {
   background-color: #e6e6e6;
 }
 
-/* Week 3: color first and third columns using colgroup */
+/* colgroup coloring for 1st and 3rd columns */
 .col-1 {
   background-color: #f9f1d6;
 }
@@ -140,106 +141,47 @@ thead th {
    Contact Form (Week 4)
    ========================= */
 .contact-form {
-  /* Week 4: Flexbox contact form */
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 10px;
 }
 
+/* Week 4: Flexbox for contact form */
 .form-row {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-label {
-  font-weight: bold;
-}
-
-/* Week 4: transition border-color on input and textarea */
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%;
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
   padding: 10px;
-  border: 1px solid #bbb;
-  border-radius: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 
+  /* Week 4: transition on border-color */
   transition: border-color 0.3s ease;
 }
 
-/* Week 4: focus effect for interactivity */
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-  border-color: #333;
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+  border-color: #4a90e2;
   outline: none;
 }
 
-/* Week 4: transition background-color on submit button */
-input[type="submit"] {
-  padding: 12px;
+.contact-form input[type="submit"] {
+  padding: 10px 14px;
   border: none;
-  border-radius: 6px;
-  color: #ffffff;
-  background-color: #555;
-
-  transition: background-color 0.3s ease;
-}
-
-/* Week 4: hover effect for submit button */
-input[type="submit"]:hover {
-  background-color: #777;
+  border-radius: 4px;
+  background-color: #333;
+  color: #fff;
   cursor: pointer;
 }
 
-/* =========================
-   Responsive Design (Week 4)
-   ========================= */
-
-/* Week 4: phone minimum width */
-@media (min-width: 480px) {
-  nav ul {
-    flex-direction: row;
-    gap: 12px;
-  }
-}
-
-/* Week 4: tablet minimum width */
-@media (min-width: 768px) {
-  main {
-    gap: 24px;
-  }
-
-  section {
-    padding: 20px;
-  }
-
-  .contact-form {
-    gap: 14px;
-  }
-}
-
-/* Week 4: desktop minimum width */
-@media (min-width: 1024px) {
-  main {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-  }
-
-  main > section {
-    flex: 1 1 320px;
-  }
-
-  #projects {
-    flex: 2 1 520px;
-  }
-
-  .contact-form {
-    max-width: 600px;
-  }
+.contact-form input[type="submit"]:hover {
+  background-color: #555;
 }
 
 /* =========================
@@ -251,4 +193,36 @@ footer {
   background-color: #333;
   color: #ffffff;
   padding: 10px;
+}
+
+/* =========================
+   Media Queries (Week 4)
+   ========================= */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.6em;
+  }
+
+  main {
+    padding: 12px;
+  }
+
+  nav a {
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 16px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-list {
+    flex-direction: column;
+  }
 }
