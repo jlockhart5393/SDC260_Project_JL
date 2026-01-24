@@ -31,11 +31,18 @@ nav ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+
+  /* Week 4: Flexbox navigation menu */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Week 4: li no longer needs inline-block for flex layout */
 nav li {
-  display: inline-block;
-  margin: 0 10px;
+  margin: 0;
 }
 
 nav a {
@@ -59,11 +66,16 @@ nav a:hover {
    ========================= */
 main {
   padding: 20px;
+
+  /* Week 4: Flexbox main content area */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* Week 3: smooth transition + scale hover effect for each section */
 section {
-  margin-bottom: 20px;
+  margin-bottom: 0;
   padding: 15px;
   background-color: #ffffff;
   border: 1px solid #ccc;
@@ -122,6 +134,112 @@ thead th {
 
 .col-3 {
   background-color: #d8f1f9;
+}
+
+/* =========================
+   Contact Form (Week 4)
+   ========================= */
+.contact-form {
+  /* Week 4: Flexbox contact form */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-weight: bold;
+}
+
+/* Week 4: transition border-color on input and textarea */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+
+  transition: border-color 0.3s ease;
+}
+
+/* Week 4: focus effect for interactivity */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #333;
+  outline: none;
+}
+
+/* Week 4: transition background-color on submit button */
+input[type="submit"] {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  color: #ffffff;
+  background-color: #555;
+
+  transition: background-color 0.3s ease;
+}
+
+/* Week 4: hover effect for submit button */
+input[type="submit"]:hover {
+  background-color: #777;
+  cursor: pointer;
+}
+
+/* =========================
+   Responsive Design (Week 4)
+   ========================= */
+
+/* Week 4: phone minimum width */
+@media (min-width: 480px) {
+  nav ul {
+    flex-direction: row;
+    gap: 12px;
+  }
+}
+
+/* Week 4: tablet minimum width */
+@media (min-width: 768px) {
+  main {
+    gap: 24px;
+  }
+
+  section {
+    padding: 20px;
+  }
+
+  .contact-form {
+    gap: 14px;
+  }
+}
+
+/* Week 4: desktop minimum width */
+@media (min-width: 1024px) {
+  main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  main > section {
+    flex: 1 1 320px;
+  }
+
+  #projects {
+    flex: 2 1 520px;
+  }
+
+  .contact-form {
+    max-width: 600px;
+  }
 }
 
 /* =========================
